@@ -8,7 +8,7 @@ function App() {
 
   const payHandler = (event) => {
     event.preventDefault();
-    Axios.post("http://localhost:5000/token", {
+    Axios.post("https://mpesa-backend-five.vercel.app/token", {
       amount,
       phone,
     })
@@ -16,7 +16,7 @@ function App() {
         console.log(res);
       })
       .catch((error) => {
-       console.log(error);
+        console.log(error);
       });
   };
   return (
@@ -35,10 +35,7 @@ function App() {
           onChange={(e) => setAmount(e.target.value)}
           className=" bg-slate-100 text-center rounded-xl"
         />
-        <button
-          onClick={payHandler}
-          className="bg-green-600 text-white px-2 py-1 rounded-2xl"
-        >
+        <button onClick={payHandler} className="bg-green-600 text-white px-2 py-1 rounded-2xl">
           Pay Now
         </button>
       </form>
